@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  psql:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: tooltube
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - psql_volume:/var/lib/postgresql/data
+
+volumes:
+  psql_volume:
